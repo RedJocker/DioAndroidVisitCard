@@ -6,7 +6,7 @@ import dio.tutorial.visitcard.databinding.ActivityAddVisitCardBinding
 
 class AddVisitCardActivity : AppCompatActivity() {
 
-    val binding by lazy {
+    private val binding by lazy {
         ActivityAddVisitCardBinding.inflate(layoutInflater)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
