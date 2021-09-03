@@ -1,6 +1,5 @@
 package dio.tutorial.visitcard.ui
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import dio.tutorial.visitcard.databinding.ActivityAddVisitCardBinding
