@@ -28,14 +28,14 @@ class VisitCardAdapter : ListAdapter<VisitCard, VisitCardAdapter.ViewHolder>(Dif
     }
 
     inner class ViewHolder(
-            private val binding: ItemVisitCardBinding) : RecyclerView.ViewHolder(binding.root) {
+        private val binding: ItemVisitCardBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: VisitCard) {
             binding.tvName.text = item.name
             binding.tvPhone.text = item.phone
             binding.tvMail.text = item.mail
             binding.tvCompany.text = item.company
-            binding.mcvContent.setBackgroundColor(Color.parseColor(item.color))
+            binding.mcvContent.setBackgroundColor(try{Color.parseColor(item.color)} catch (e : IllegalArgumentException) { Color.DKGRAY })
             binding.mcvContent.setOnClickListener { listenerShare(it)}
         }
     }
