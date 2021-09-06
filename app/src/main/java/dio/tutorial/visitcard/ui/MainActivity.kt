@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import dio.tutorial.visitcard.App
 import dio.tutorial.visitcard.databinding.ActivityMainBinding
+import dio.tutorial.visitcard.util.Image
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy {
@@ -30,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener {
             val addVisitCardIntent = Intent(this@MainActivity,  AddVisitCardActivity::class.java)
             startActivity(addVisitCardIntent)
+        }
+        adapter.listenerShare = { card ->
+            Image.share(this@MainActivity, card)
         }
     }
 
